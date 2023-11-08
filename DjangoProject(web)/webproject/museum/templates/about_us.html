@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% load static %}
+<html lang="en">
+{% block head %}
+    <title>{% block title %}About us{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'about_us.css' %}"/>
+{% endblock %}
+{% block content %}
+    <h2 class="title-paragraph">About Our Museum</h2>
+    <q cite="https://www.goodreads.com/quotes/67884-we-all-know-that-art-is-not-truth-art-is">We all know that Art is not truth. Art is a lie that makes us realize truth at least the truth that is given us to understand. – Pablo Picasso</q>
+    <section class="text-about-us">
+        <p>Welcome to the XYZ Museum, a place where art, history, and culture converge to inspire and educate visitors of all ages. Our museum is dedicated to preserving and showcasing the rich heritage of our region and beyond. At XYZ Museum, our mission is to collect, preserve, and interpret artifacts, artworks, and historical records to foster a deeper understanding and appreciation of human creativity, history, and cultural diversity. We strive to provide engaging and thought-provoking experiences that stimulate curiosity and inspire lifelong learning.</p>
+    </section>
+
+    <h2 class="title-paragraph">History of the Museum</h2>
+    <dl class="history">
+        <dt><abbr title="Foundation">FND</abbr> - 1890</dt>
+        <dd>
+        A group of passionate individuals came together with the vision of establishing a museum (<abbr title="Museum">MSM</abbr>) to preserve and showcase the cultural heritage of our region.
+        </dd>
+
+        <dt><abbr title="Opening">OPN</abbr> - 1893</dt>
+        <dd>
+        The museum officially opened its doors to the public, featuring a small collection of local artifacts and artworks.
+        </dd>
+
+        <dt><abbr title="Expansion">EXP</abbr> - 1920</dt>
+        <dd>
+        With growing public interest, the museum expanded its facilities and acquired additional exhibition spaces to accommodate a broader range of collections (<abbr title="Collections">COL</abbr>).
+        </dd>
+
+        <dt><abbr title="Special Exhibition">SPEC</abbr> - 1955</dt>
+        <dd>
+        The museum hosted a groundbreaking exhibition on ancient civilizations, drawing visitors and critical acclaim from around the world.
+        </dd>
+
+        <dt><abbr title="Renovation">RENOV</abbr> - 1978</dt>
+        <dd>
+        The museum underwent a major renovation, modernizing its infrastructure and enhancing the visitor experience with interactive displays (<abbr title="Interactive Displays">ID</abbr>) and multimedia presentations.
+        </dd>
+
+        <dt><abbr title="Community Outreach">OUTR</abbr> - 1995</dt>
+        <dd>
+        The museum launched various educational programs (<abbr title="Education">EDU</abbr>) and initiatives to engage the local community, including workshops, lectures, and guided tours.
+        </dd>
+
+        <dt><abbr title="Technology Integration">TECH</abbr> - 2005</dt>
+        <dd>
+        Embracing digital advancements, the museum introduced state-of-the-art technologies to offer virtual tours, online exhibitions, and interactive learning experiences.
+        </dd>
+
+        <dt><abbr title="Collaborative Projects">COLLAB</abbr> - 2018</dt>
+        <dd>
+        The museum initiated collaborations with international institutions, bringing world-class exhibitions and fostering cultural exchange.
+        </dd>
+
+        <dt><abbr title="Expansion and Redesign">EXPD</abbr> - 2021</dt>
+        <dd>
+        Responding to increased visitor demand, the museum expanded its physical space, incorporating innovative architectural designs and creating new galleries for special exhibitions (<abbr title="Temporary Exhibitions">TEMP</abbr>).
+        </dd>
+    </dl>
+
+    <div class="iframe-container">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/hMhy0_5jNIk?si=xtukGLnB5zIq9mdJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
+
+    <h2 class="title-paragraph">Сertificate</h2>
+    <section class="certificate">
+        <p>OOO «Museum XYZ»</p>
+        <p>Svidetelstvo</p>
+        <p><b>Legal address:</b> 220005, Republic of Belarus, city Mink, st. Kozlova, 3</p>
+        <p>UNP 193067319</p>
+        <p><b>Postal address:</b> 220005</p>
+        <p>Certificate of state registration No. 193067319 dated April 19, 2001 issued by the Minsk City Executive Committee</p>
+        <p>Registered by the Ministry of Information of the Republic of Belarus on May 11, 2001 in the State Register of Publishers, Manufacturers and Distributors of Printed Publications of the Republic of Belarus as a distributor of printed publications under No. 3/1656</p>
+        <p>Registered in the Trade Register of the Republic of Belarus on May 31, 2002 under No. 416870</p>
+        <div class="image-container"><img src="/media/stamp.png" alt="Stamp"></div>
+    </section>
+{% endblock %}
+</html>

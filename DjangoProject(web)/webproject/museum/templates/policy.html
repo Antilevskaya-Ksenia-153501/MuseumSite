@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% load static %}
+<html lang="en">
+{% block head %}
+    <title>{% block title %}Policy{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'policy.css' %}"/>
+{% endblock %}
+{% block content %}
+<h1>Museum Visitor Policy</h1>
+<nav class="policy-nav">
+  <ul>
+    <li><a href="#indroduction">Introduction</a></li>
+    <li><a href="#tickets">Admission and Ticketing</a></li>
+    <li><a href="#conduct">Visitor Conduct</a></li>
+    <li><a href="#exhibit">Exhibit and Facility Usage</a></li>
+    <li><a href="#ethics">Code of Ethics</a></li>
+    <li><a href="#updates">Policy Updates</a></li>
+  </ul>
+</nav>
+<div class="policy-text">
+  <h2 id="indroduction">1. Introduction</h2>
+    <h3>1.1 Mission Statement:</h3>
+    <p>Our museum is dedicated to preserving, studying, and showcasing diverse aspects of human history, culture, art, and science. Our mission is to inspire curiosity, foster learning, promote cultural understanding, and provide an enriching experience for visitors of all ages and backgrounds.</p>
+
+    <h3>1.2 Scope:</h3>
+    <p>This policy applies to all visitors, staff, volunteers, contractors, and any individual or group present within the museum premises. It encompasses all areas, including exhibition halls, galleries, event spaces, educational facilities, administrative offices, and outdoor spaces.</p>
+
+    <h2 id="tickets">2. Admission and Ticketing</h2>
+    <h3>2.1 General Admission:</h3>
+    <ol>
+      <li>All visitors must possess a valid ticket, pass, or reservation for entry, except during designated free admission periods.</li>
+      <li>Certain exhibitions, events, or programs may require separate tickets or reservations.</li>
+      <li>Children under a certain age (as specified by the museum) must be accompanied by an adult.</li>
+    </ol>
+
+    <h3>2.2 Membership and Passes:</h3>
+    <p>The museum offers membership programs and various passes, providing benefits such as unlimited admission, exclusive previews, discounts, and access to special events.</p>
+
+    <h3>2.3 Timed Entry and Capacity:</h3>
+    <p>To ensure a comfortable and enjoyable experience, timed entry may be implemented during peak periods or for specific exhibitions. The museum reserves the right to limit the number of visitors in certain areas to maintain safety and preserve exhibits.</p>
+
+    <h3>2.4 Ticket Refunds and Exchanges:</h3>
+    <p>Tickets are non-refundable unless the museum cancels or reschedules an event or exhibition. Ticket exchanges or transfers may be permitted under certain circumstances, subject to availability and museum policies.</p>
+
+    <h2 id="conduct">3. Visitor Conduct</h2>
+    <h3>3.1 Respectful Behavior:</h3>
+    <p>Visitors are expected to conduct themselves in a respectful and considerate manner towards others, including fellow visitors, staff, volunteers, and artists. Disruptive behavior, harassment, intimidation, or any action that compromises the safety, well-being, or enjoyment of others is strictly prohibited.</p>
+
+    <h3>3.2 Photography and Filming:</h3>
+    <p>Photography and filming for personal, non-commercial use are generally permitted, unless otherwise specified for certain exhibitions or areas. The use of flash, tripods, selfie sticks, and other equipment may be restricted in specific areas or during certain events. Commercial or professional photography/filming requires prior permission and a permit from the museum.</p>
+
+    <h3>3.3 Security and Safety:</h3>
+    <p>Visitors must comply with security measures, including bag checks, metal detectors, or other screening procedures, as deemed necessary by the museum. Any behavior or possession of items that may pose a threat to the safety, security, or preservation of exhibits or individuals is strictly prohibited.</p>
+
+    <h3>3.4 Accessibility:</h3>
+    <p>The museum is committed to providing equal access and accommodation for visitors with disabilities. Accessible entrances, elevators, ramps, and facilities are available throughout the premises. Visitors are encouraged to contact the museum in advance to discuss specific accessibility requirements or request assistance.</p>
+
+    <h3>3.5 Dress Code:</h3>
+    <p>Visitors are expected to dress appropriately for a public, family-friendly environment. Nudity, offensive or provocative clothing, or attire that may cause discomfort or offense to others is not permitted.</p>
+
+    <h3>3.6 Children and Supervision:</h3>
+    <p>Children must be supervised by an adult at all times while in the museum. Parents/guardians are responsible for ensuring that children do not engage in behavior that may harm exhibits, artworks, or other visitors.</p>
+
+    <h3>3.7 Prohibited Items:</h3>
+    <p>Dangerous or illegal items, including weapons, explosives, drugs, or any item that may damage exhibits or pose a threat to safety, are strictly prohibited. The museum reserves the right to confiscate and report such items to the appropriate authorities.</p>
+
+    <h2 id="exhibit">4. Exhibit and Facility Usage</h2>
+    <h3>4.1 Exhibit Interaction:</h3>
+    <p>Visitors are encouraged to interact with exhibits within the guidelines provided. Touching or handling exhibits, unless explicitly allowed, may damage or degrade the artwork or artifacts. Visitors should follow instructions, use provided tools or interactive devices appropriately, and avoid any action that could compromise the integrity of the exhibits.</p>
+
+    <h3>4.2 Food and Drinks:</h3>
+    <p>Food and drinks are generally not allowed in exhibition halls or galleries to prevent damage to the exhibits. Designated areas, such as cafeterias or outdoor spaces, may be available for dining or refreshments.</p>
+
+    <h3>4.3 Smoking and Tobacco:</h3>
+    <p>Smoking, including the use of electronic cigarettes or vaping devices, is strictly prohibited within the museum premises. Designated smoking areas, if available, will be clearly marked outside the building.</p>
+
+    <h3>4.4 Cell Phones and Electronic Devices:</h3>
+    <p>Visitors are requested to set their cell phones and electronic devices to silent mode or turn them off while in exhibition halls, galleries, or during guided tours. Phone conversations should be taken outside designated areas to minimize disruption to other visitors.</p>
+
+    <h3>4.5 Lost and Found:</h3>
+    <p>The museum is not responsible for lost, stolen, or damaged personal belongings. Lost and found items should be reported to museum staff, and efforts will be made to locate and return lost items if possible.</p>
+
+    <h2 id="ethics">5. Code of Ethics</h2>
+    <h3>5.1 Preservation and Conservation:</h3>
+    <p>The museum is committed to preserving and conserving its collections and exhibits for future generations. Visitors are expected to respect and follow instructions regarding the handling, photography, or reproduction of artworks or artifacts.</p>
+
+    <h3>5.2 Intellectual Property:</h3>
+    <p>The intellectual property rights of artists, photographers, and other creators are protected within the museum. Visitors should not reproduce, distribute, or use copyrighted materials without permission.</p>
+
+    <h3>5.3 Feedback and Complaints:</h3>
+    <p>The museum welcomes feedback, suggestions, or complaints from visitors. Feedback can be provided through designated channels, such as comment cards or online forms. Complaints will be addressed promptly and professionally.</p>
+
+    <h2 id="updates">6. Policy Updates</h2>
+    <p>This museum policy is subject to change. Updates and revisions will be communicated through the museum's official website, social media platforms, or posted notices within the premises. By entering the museum, visitors agree to abide by this policy and any additional rules or instructions provided by museum staff.</p>
+</div>
+
+<a href="/media/policy.pdf" download="policy_document.pdf">Download PDF</a>
+    
+{% endblock %}
+</html>

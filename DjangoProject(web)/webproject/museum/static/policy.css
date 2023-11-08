@@ -1,0 +1,101 @@
+.policy-nav {
+    /* position: sticky;
+    top: 0; */
+    width: 100%;
+    background-color: #f2f2f2;
+    padding: 10px;
+    z-index: 1; 
+}
+
+.policy-nav ul{
+    padding: 10px;
+}
+
+.policy-nav ul li{
+    list-style: decimal;
+    list-style-position: inside;
+    font-size: 18px;
+    font-weight: 550;
+    text-align: center;
+}
+
+.policy-nav ul li:hover{
+    color: #01996D;
+}
+
+h1 {
+    font-size: 30px;
+    font-weight: 800;
+    text-align: center;
+    color: black;
+    margin: 10px;
+}
+
+h2 {
+    font-size: 24px;
+    font-weight: 800;
+    color: black;
+    padding: 10px;
+}
+
+h3 {
+    font-size: 22px;
+    font-weight: 800;
+    color: black;
+    padding-left: 10px;
+}
+
+p {
+    text-indent: 30px;
+    padding-left: 10px;
+    font-weight: 500;
+    font-size: 20px;
+    color: #292929;
+}
+
+p:last-child {
+    margin-bottom: 20px;
+}
+
+ol {
+    list-style-type: circle;
+    margin-left: 30px;
+    font-size: 20px;
+}
+
+ol li:first-child {
+    color: blue;
+    font-weight: bold;
+  }
+  
+ol li:last-child {
+    color: red;
+    font-style: italic;
+}
+  
+ol li:nth-child(2) {
+    background-color: yellow;
+    padding: 5px;
+}
+
+.policy-text *::selection {
+    background-color: #5fe7c1;
+}
+
+a[href$=".pdf"] {
+    margin: 10px;
+    background-color: #2bdba9;
+    color: #fff;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 400;
+    min-height: 30px;
+    padding: 13px 20px;
+    transition: color 0.2s ease;   
+}
+
+a[href^="/media/policy"]:hover {
+    opacity: 0.8;
+    color: #fff;
+}
+

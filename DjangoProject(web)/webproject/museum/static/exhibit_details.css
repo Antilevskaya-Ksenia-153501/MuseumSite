@@ -1,0 +1,13 @@
+.exhibit {
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-size: 16px;
+    line-height: 180%;
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.buttons {
+    margin-left: 10px;
+}

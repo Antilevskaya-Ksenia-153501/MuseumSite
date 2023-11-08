@@ -1,0 +1,124 @@
+.title-paragraph {
+    color: #01996D;
+    font-size: x-large;
+    font-weight: 600;
+    margin-left: 10px;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    text-transform: uppercase;
+}
+
+q {
+    color: #666;
+    font-style: italic;
+    padding: 10px 20px;
+    border-left: 4px solid #ccc;
+}
+
+.text-about-us p::first-letter{
+    font-size: 25px;
+    color: rgb(6, 202, 81);
+    font-style: italic;
+    text-indent: 40px;
+}
+
+.text-about-us {
+    color: #292929;
+    font-size: 18px;
+    margin: 15px 10px;
+    word-break: break-word;
+    hyphens: auto;
+}
+
+.text-about-us p{
+    text-indent: 40px;
+}
+
+.history {
+    padding-left: 10px;
+}
+
+.history abbr {
+    text-decoration: underline;
+    cursor: help;
+}
+  
+.history dt {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+    list-style: none;
+}
+
+.history dt:before {
+    content: "\25c7 ";
+    margin-right: 5px;
+}
+  
+.history dd {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.certificate {
+    height: 700px;
+    width: 500px;
+    margin: 10px 10px;
+    padding: 20px;
+    background-image: -webkit-linear-gradient(
+        top,
+        rgba(237, 42, 42, 0.3) 0%,
+        rgba(74, 29, 189, 0.3) 100%
+      ),
+      url('/media/background-certificate-green.jpg');
+    background-image: linear-gradient(
+        to bottom,
+        rgba(237, 42, 42, 0.3) 0%,
+        rgba(74, 29, 189, 0.3) 100%
+      ),
+      url('/media/background-certificate-green.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    -webkit-border-image-width: 5%;
+    border-image-width: 5%;
+    border-width: 20px;
+    border-style: solid;
+    -webkit-border-image-source: url('/media/certificate-border.jpg');
+    border-image-source: url('/media/certificate-border.jpg');
+    -webkit-border-image-slice: 10%;
+    border-image-slice: 10%;
+    border-image-repeat: round;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+    letter-spacing: 0px;
+    text-align: justify;
+    color: black;
+    z-index: 1;
+    position: relative;
+}
+
+.certificate .image-container {
+    position:absolute;
+    z-index: 2;
+    height: 130px;
+    width: 130px;
+    right: 0;
+}
+
+.iframe-container {
+    margin:10px;
+}
+
+.certificate p:first-child {
+    text-align: center;
+    font-size: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.certificate p:nth-child(2){
+    text-align: center;
+    font-size: 35px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif 
+}

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% load static %}
+<html lang="en">
+{% block head %}
+    <title>{% block title %}Halls{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'halls.css' %}"/>
+{% endblock %}
+{% block content %}
+    <div class="hall-container">
+        {% for hall in halls %}
+        <span class="hall">
+            <p>Hall name:  {{ hall.title }}</p>
+            <p>Hall area: {{ hall.area }}</p>
+            <p>Hall number: {{ hall.number }}</p>
+            <p>Hall floor: {{ hall.floor }}</p>
+        </span>
+        {% endfor %}
+    </div>
+{% endblock %}
+</html>

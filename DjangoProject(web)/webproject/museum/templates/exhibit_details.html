@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% load static %}
+<html lang="en">
+{% block head %}
+    <title>{% block title %}Details{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'exhibit_details.css' %}"/>
+{% endblock %}
+{% block content %}
+    <div class="exhibit">
+        <p>Exhibit name: {{ exhibit.title }}</p>
+        <p>Exhibit hall: {{ exhibit.hall }}</p>
+        <p>Exhibit employee: {{ exhibit.employee }}</p>
+        <time>Receipt date: {{ exhibit.receiptDate }}</time>
+        <p>Type of art:
+        {% for em in exhibit.typeOfArt.all %}
+            {{ em }}
+        {% endfor %} 
+        </p>  
+    </div>
+    {% if user.is_staff %}
+    <div class="buttons">
+        <a href="edit_exhibit/{{exhibit.id}}/" class="btn">Edit</a> <a href="delete_exhibit/{{exhibit.id}}/" class="btn">Delete</a>
+    </div>
+    {%endif%}
+{% endblock %}

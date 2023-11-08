@@ -1,0 +1,99 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="description" content="XYZ Museum is a renowned institution showcasing art and history.">
+    <meta name="keywords" content="museum, art, history, culture">
+    <meta name="author" content="Antilevskaya Ksenia">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/media/museum_icon.png">
+    <link rel="stylesheet" href="{% static 'reset.css' %}">
+    <link rel="stylesheet" href="{% static 'header.css' %}">
+    <link rel="stylesheet" href="{% static 'base.css' %}">
+    <title>{% block title %}Home{% endblock %}</title>
+    {% block head %} {% endblock %}
+</head>
+<body>
+    <header class="header">
+        <div class="header-row">
+            <div class="header-logo"><img src="/media/museum_icon.png" alt="Museum icon"></div>
+            <nav class="header-nav">
+                <ul>
+                    <li><a href={% url 'about_us' %}>About-us</a></li>
+                    <li><a href={% url 'home' %}>Home</a></li>
+                    <li><a href={% url 'exhibits' %}>Exhibits</a></li>
+                    <li><a href={% url 'halls' %}>Halls</a></li>
+                    {% if user.is_staff %}
+                        <li><a href={% url 'employees' %}>Employees</a></li>
+                    {%endif%}
+                    <li><a href={% url 'excursions' %}>Excursions</a></li>
+                    {% if user.is_staff %}
+                        <li><a href={% url 'analytics' %}>Analytics</a></li>
+                    {%endif%}
+                    <li><a href={% url 'news_list' %}>News</a></li>
+                    <li><a href={% url 'coupons' %}>Coupons</a></li>
+                    <li><a href={% url 'contacts' %}>Contacts</a></li>
+                    <li><a href={% url 'vacancies' %}>Vacancy</a></li>
+                    <li><a href={% url 'questions' %}>FAQs</a></li>
+                    <li><a href={% url 'reviews' %}>Reviews</a></li>
+                    <li><a href={% url 'policy' %}>Policy</a></li>
+                </ul>
+            </nav>
+            <div class="header-login">
+                {% if user.is_authenticated %}
+                    <h3 class="user">Hello, {{ user.username }}!</h3>
+                    <a href="{% url 'authorization:logout' %}" class="btn">Log out</a>
+                {% else %}
+                    <a href="{% url 'authorization:registerCustomer' %}" class="btn">Sign up</a>
+                    <a href="{% url 'authorization:signin' %}" class="btn">Sign in</a>
+                {% endif %}
+            </div>
+        </div>
+    </header>
+    <div class="time">
+        Current date <span id='date'></span>
+        <br>
+        Current time <span id='time'></span>
+        <br>
+        Current time zone <span id='zone'></span>
+        <br>
+        <script>
+            const today = new Date();
+            const yyyy = today.getFullYear();
+            let mm = today.getMonth() + 1;
+            let dd = today.getDate();
+            let h = today.getHours();
+            if (h < 10)
+                h = '0' + h;
+            let min = today.getMinutes();
+            if (min < 10)
+                min = '0' + min;
+            let sec = today.getSeconds();
+            if (sec < 10)
+                sec = '0' + sec;
+    
+            if (dd < 10) dd = '0' + dd;
+            if (mm < 10) mm = '0' + mm;
+    
+            let formattedToday = dd + '/' + mm + '/' + yyyy;
+            let time = h + ":" + min + ":" + sec;
+            let tz = -(new Date().getTimezoneOffset() / 60);
+            if (tz > 0) {
+                tz = "+" + tz;
+            }
+            tz = "UTC" + tz;
+            document.getElementById('date').innerHTML = formattedToday;
+            document.getElementById('time').innerHTML = time;
+            document.getElementById('zone').innerHTML = tz;
+        </script>
+    </div>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+    <footer>
+        <p>&copy; 2023 XYZ Museum. All rights reserved. </p>
+    </footer>
+</body>
+</html>

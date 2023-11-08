@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% load static %}
+<html lang="en">
+{% block head %}
+    <title>{% block title %}Coupons{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'coupons.css' %}"/>
+{% endblock %}
+{% block content %}
+    <div class="coupon-container">
+        {% for coupon in coupons %}
+            <div class="coupon">
+            <h3>{{ coupon.title }}</h3>
+            <time>{{ coupon.valid_from }} – {{ coupon.valid_to }}</time>
+            <p>{{ coupon.description }}</p>
+            <b>Discount:</b> {{ coupon.discount }}%
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
+</html>

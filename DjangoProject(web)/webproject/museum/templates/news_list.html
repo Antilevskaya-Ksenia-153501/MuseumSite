@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% load static %}
+<html lang="en">
+{% block head %}
+    <title>{% block title %}News{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'news_list.css' %}"/>
+{% endblock %}
+
+{% block content %}
+<div class="news-container">
+    {% for article in articles %}
+        <article>
+          <h2>{{ article.title }}</h2>
+          <div class="article-content">
+            <img src="{{ article.image.url }}" alt="Article image" height="300px" width="200px">
+            <p class="article-summary">{{ article.summary }}</p>
+          </div>
+          <div class="read-more-container">
+            <a href="{% url 'news_details' article.id %}" class="read-more">Watch more</a>
+          </div>
+        </article>   
+    {% endfor %}   
+</div>   
+{% endblock %}
+</html>

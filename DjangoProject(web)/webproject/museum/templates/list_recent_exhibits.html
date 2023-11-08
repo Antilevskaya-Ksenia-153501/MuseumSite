@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}Recent{% endblock %}
+
+{% block content %}
+    {% for exh in recent_exhibits %}
+        <div class="exhibitList">
+            {% if exh.image %}
+                <br>
+                <img src="{{ exh.image.url }}" alt="Exhibit image">
+                <br>
+            {% endif %}
+            Exhibit name: <a href="{{ exh.get_absolute_url }}"> {{ exh.title }} </a>
+        </div>
+    {% endfor %}
+{% endblock %}

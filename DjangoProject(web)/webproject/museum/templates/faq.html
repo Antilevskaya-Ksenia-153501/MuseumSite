@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% load static %}
+<html lang="en">
+{% block head %}
+    <title>{% block title %}FAQs{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'faq.css' %}"/>
+{% endblock %}
+{% block content %}
+    {% for question in questions %}
+        <details>
+            <summary class="question-summary">{{ question.question }}</summary>
+            <p class="question-answer">{{ question.answer }}</p>
+            <time class="question-date">{{ question.date }}</time>
+        </details>
+    {% endfor %}   
+{% endblock %}
+</html>

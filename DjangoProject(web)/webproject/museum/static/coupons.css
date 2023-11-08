@@ -1,0 +1,48 @@
+.coupon-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.coupon {
+    width: 300px;
+    margin: 10px;
+    padding: 20px;
+    background-color: hsl(87, 72%, 83%);
+    border: 1px solid #e1e1e1;
+    border-radius: 8px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.coupon h3 {
+    margin-top: 0;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.coupon time {
+    font-style: italic;
+    color: #e34915;
+    text-decoration: underline;
+    font-size: 17px;
+}
+
+.coupon p {
+    margin-bottom: 15px;
+    text-align: justify;
+    text-indent: 30px;
+}
+
+.coupon b {
+    font-size: 18px;
+    display: block;
+}
+
+.coupon b:before {
+    content: "•";
+    margin-right: 5px;
+}
+
+.coupon b:first-child:before {
+    content: "";
+    margin-right: 0;
+}

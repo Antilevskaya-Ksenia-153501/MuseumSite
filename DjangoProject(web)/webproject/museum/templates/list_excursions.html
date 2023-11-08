@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% load static %}
+<html lang="en">
+{% block head %}
+    <title>{% block title %}Excursions{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'list_excursions.css' %}"/>
+{% endblock %}
+{% block content %}
+    {% if user.is_staff %}
+        <form action="{% url 'sort_by_seasons' %}" method="get" class="form-excursions">
+            <label for="seasons">Choose a season:</label>
+            <select name="seasons">
+                <option value="autumn">Autumn</option>
+                <option value="winter">Winter</option>
+                <option value="spring">Spring</option>
+                <option value="summer">Summer</option>
+            </select>
+            <input type="submit" value="Select">
+        </form>
+    {% endif %}
+
+    <div class="excursion-container">
+        {% for excursion in excursions %}
+        <div class="excursion">
+            <p>Excursion name:  {{ excursion.title }}</p>
+            <p>Excursion date: {{ excursion.date }}</p>
+            <p>Number of people: {{ excursion.numOfPpl }}</p>
+        </div>
+    {% endfor %}
+    </div>
+{% endblock %}
+</html>

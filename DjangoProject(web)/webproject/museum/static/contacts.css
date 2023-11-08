@@ -1,0 +1,237 @@
+h3 {
+    display: inline-block;
+    color: #127559;
+    font-size: 20px;
+    margin: 10px;
+    font-style: italic;
+    border-bottom: 3px dotted #127559;
+}
+  
+div[itemprop="address"] {
+    margin: 10px;
+}
+  
+span[itemprop="streetAddress"] {
+    display: block;
+}
+  
+strong {
+    font-weight: bold;
+}
+  
+p {
+    margin: 10px;
+    font-size: 18px;
+    line-height: 80%;
+    font-family: 'Playpen Sans', cursive;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%; 
+    margin-top: 20px;
+  }
+
+td, th {
+    border: 1px solid black;
+  }
+  
+table th {
+    background-color: #92db32; 
+    text-align: center; 
+    vertical-align: middle; 
+    padding: 10px; 
+}
+
+table td {
+    text-align: center;
+    vertical-align: middle; 
+    padding: 10px; 
+}
+  
+table tbody td:first-child {
+    font-weight: bold; 
+}
+  
+table tbody td:last-child {
+    font-style: italic; 
+}
+  
+table tbody tr:nth-child(even) td {
+    background-color: #57df89; 
+}
+  
+table tbody tr:first-child td {
+    border-top: 2px solid #000; 
+}
+  
+table tbody tr:last-child td {
+    border-bottom: 2px solid #000; 
+}
+  
+table tbody td:nth-child(2),
+table tbody td:nth-child(3) {
+    font-weight: bold; 
+}
+  
+table tbody td[colspan="2"] {
+    background-color: #4dece7; 
+    text-align: center; 
+}
+
+.employee-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  
+.employee {
+    height: 600px;
+    width: 500px;
+    margin: 10px 10px;
+    padding: 10px;
+    position: relative;
+    border-right: 2px solid #000000;
+    border-left: 2px solid #000000;
+}
+  
+.employee::before,
+.employee::after {
+    content: "";
+    position: absolute;
+    width: 50%;
+    height: 2px;
+    background-color: #000000;
+}
+  
+.employee::before {
+    top: 0;
+    left: 0;
+}
+  
+.employee::after {
+    bottom: 0;
+    right: 0;
+}
+  
+.employee img {
+    height: 75%;
+    width: 100%;
+    margin-bottom: 30px; 
+    object-fit: cover; 
+}
+
+q:lang(de) {    
+    quotes: "\201E" "\201C";     
+}   
+q:lang(en) {    
+    quotes: "\201C" "\201D";    
+}   
+q:lang(fr), q:lang(ru) { 
+    quotes: "\00AB" "\00BB";    
+}
+
+#audio {
+    text-align: left;
+    margin-top: 20px;
+}
+
+audio {
+    display: block;
+    margin: 10px;
+    width: 300px;
+}
+  
+audio::-webkit-media-controls-panel {
+    background-color: #d4ed73;
+    border-radius: 5px;
+    padding: 10px;
+}
+  
+audio::-webkit-media-controls-play-button,
+audio::-webkit-media-controls-timeline,
+audio::-webkit-media-controls-time-remaining-display,
+audio::-webkit-media-controls-current-time-display {
+    color: #2b876d;
+}
+  
+audio::-webkit-media-controls-play-button {
+    font-size: 20px;
+}
+  
+audio::-webkit-media-controls-timeline {
+    height: 10px;
+}
+  
+audio::-webkit-media-controls-time-remaining-display,
+audio::-webkit-media-controls-current-time-display {
+    font-size: 16px;
+    font-style: italic;
+}
+  
+audio::-webkit-media-controls-volume-slider {
+    width: 100px;
+}
+
+#video {
+    text-align: left;
+    margin-top: 20px;
+  }
+  
+video {
+    display: block;
+    margin: 10px;
+    max-width: 100%;
+    height: auto;
+    border: 10px double #2d21cc;
+    border-radius: 5px;
+}
+
+.form-control {
+    margin: 15px;
+}
+
+.form-control label {
+    display: block;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.form-control input:enabled,
+.form-control select:enabled {
+    border: 5px solid #ed0cda;
+    cursor:pointer;
+}
+
+.form-control input:disabled,
+.form-control select:disabled {
+    background-color: #F5F5F5;
+    color: #999;
+    border: 2px solid #999;
+    cursor: not-allowed;
+}
+
+.form-control input:required,
+.form-control select:required {
+     border: 2px solid #01996D;
+     background-color: #99f3be;
+}
+
+.form-control input:out-of-range,
+.form-control select:out-of-range {
+    border:2px solid #FF6F6F;
+}
+
+.form-control input[type="checkbox"]:checked + label,
+.form-control input[type="radio"]:checked + label{
+    background-color: #8ae2c9;
+    font-style: italic;
+}
+
+.form-control input[type="checkbox"]:disabled + label,
+.form-control input[type="radio"]:disabled + label {
+    color: #999;
+    cursor: not-allowed;
+    background-color: #F5F5F5;
+    border-color: #999;
+}

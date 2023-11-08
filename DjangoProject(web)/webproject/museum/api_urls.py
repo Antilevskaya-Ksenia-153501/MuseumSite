@@ -1,0 +1,1 @@
+API_URLS = {"random_quote": 'https://favqs.com/api/qotd'}

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% load static %}
+<html lang="en">
+{% block head %}
+    <title>{% block title %}Reviews{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'reviews.css' %}"/>
+{% endblock %}
+{% block content %}
+    <div class="review-container">
+        {% for review in reviews %}
+        <div class="review">
+            <p class="author">User: {{ review.author }}</p>
+            <p class="stars">Stars: {{ review.stars }}</p>
+            <p class="comment">{{ review.comment }}</p>
+            <time class="review-date" pubdate>{{ review.review_date }}</time>
+        </div>
+    {% endfor %}
+    </div>
+    <a href={% url 'create_review' %} class="btn review-btn">Add review</a>
+{% endblock %}
+</html>

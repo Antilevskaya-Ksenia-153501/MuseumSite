@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}Results{% endblock %}
+
+{% block content %}
+    <h1>Search Results</h1>
+    {% for employee in employees %}
+        <div class="employee">
+            <br>
+            <img src="{{ employee.image.url }}" alt="Employee image" height="350px" width="350px">
+            <br
+            First name: {{ employee.first_name }}
+            <br>
+            Last name: {{ employee.last_name }}
+            <br>
+            Tel: {{ employee.phone_number }}
+            <br>
+            Post: {{ employee.post }}
+      </div>
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% load static %}
+<html lang="en">
+{% block head %}
+    <title>{% block title %}Home{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'home.css' %}"/>
+{% endblock %}
+{% block content %}
+    <div class="news-container">
+        <div class="latest-news">
+            <h2>The Latest News</h2>
+            <h3>{{ article.title }}</h3>
+            <img src="{{ article.image.url }}" alt="Article image" height="150px" width="150px">
+            <p>{{ article.summary }}</p>
+            <a href="{% url 'news_details' article.id %}">Watch more</a>
+        </div>
+    </div>
+
+    {% if user.is_authenticated %}
+        {%if random_quote %}
+        <p class="quote">Here is random quote: <strong>{{ random_quote }}</strong></p>
+        {%endif%}
+    {% endif %}
+
+    <div class="banner-container">
+        <img src="/media/banner.png" alt="Banner" class="moving-banner">
+    </div>
+
+    <h2>Partners</h2>
+    <div class="partners-container">
+        <ul>
+            <li><a href="https://belgazprombank.by/" target="_blank"><img src="/media/news/belgazprombank.jpg" alt="bank"></a></li>
+            <li><a href="http://belartunion.by/" target="_blank"><img src="/media/news/belartunion.png" alt="union of painterss"></a></li>
+        </ul>
+    </div>
+{% endblock %}

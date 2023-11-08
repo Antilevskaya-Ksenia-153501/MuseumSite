@@ -1,0 +1,24 @@
+.hall-container {
+    display: grid;
+    grid-template-rows: auto;
+    grid-gap: 10px;
+    margin: 10px;
+}
+
+.hall {
+    background-color: #f2f2f2;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+p:first-child {
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 4px;
+}
+
+p:nth-child(3) {
+    word-spacing: 4px;
+    color: goldenrod;
+}

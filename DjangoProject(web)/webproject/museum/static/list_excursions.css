@@ -1,0 +1,54 @@
+.form-excursions {
+    display: flex;
+    flex-direction: column;
+    max-width: 180px;
+    margin: 10px;
+}
+
+label {
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 17px;
+}
+
+select, input[type="submit"] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+.excursion-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 10px;
+}
+
+.excursion {
+    background-color: #f2f2f2;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    width: calc(33.33% - 10px);
+}
+
+.excursion p {
+    margin: 0;
+    margin-bottom: 5px;
+}
+
+.excursion p:first-child {
+    font-weight: bold;
+}

@@ -1,0 +1,33 @@
+.vacancy {
+    float: left;
+    width: 40%;
+    margin: 30px;
+}
+  
+.vacancy:nth-child(2n) {
+    clear: right;
+}
+
+.vacancy h2 {
+    font-size: 24px;
+    color: green;
+}
+
+.vacancy h2:before {
+    content: "\1F4BC";
+    display: inline-block;
+    margin-right: 5px;
+}
+  
+.vacancy h3 {
+    font-size: 20px;
+    color: darkgreen;
+    text-indent: 20px;
+    text-decoration: underline;
+}
+  
+.vacancy p {
+    text-indent: 20px;
+    font-size: 18px;
+    text-align: justify;
+}

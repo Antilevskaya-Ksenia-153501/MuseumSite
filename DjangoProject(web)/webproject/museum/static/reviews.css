@@ -1,0 +1,35 @@
+.review-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.review {
+    background-color: #f7f7f7ee;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+}
+
+.author {
+    font-weight: bold;
+}
+
+.stars {
+    color: #ffac00;
+    margin-bottom: 8px;
+}
+
+.comment {
+    margin-bottom: 10px;
+}
+
+.review-date {
+    font-style: italic;
+    color: #888;
+}
+
+.review-btn {
+    margin: 10px;
+}

@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}Results by season{% endblock %}
+
+{% block content %}
+    <h1>Search Results</h1>
+    {% for excursion in excursions %}
+    <div class="excursion">
+        <h3>{{ excursion.title }}</h3>
+        <time>{{ excursion.date }}</time>
+        Number of people: {{ excursion.numOfPpl }}
+    </div>
+    {% endfor %}
+{% endblock %}

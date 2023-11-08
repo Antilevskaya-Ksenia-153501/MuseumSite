@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% load static %}
+<html lang="en">
+{% block head %}
+    <title>{% block title %}News details{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'news_details.css' %}"/>
+{% endblock %}
+{% block content %}
+    <article>
+        <h2>{{ article.title }}</h2>
+        <time pubdate>{{ article.pub_date }}</time>
+        <p class="article-text">{{ article.text }}</p>
+    </article>
+{% endblock %}
+</html>

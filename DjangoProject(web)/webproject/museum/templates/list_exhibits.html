@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% load static %}
+<html lang="en">
+{% block head %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Exhibits{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'list_exhibits.css' %}"/>
+{% endblock %}
+{% block content %}
+    {% if user.is_staff %}
+        <a href={% url 'create_exhibit' %} class="btn exhibit-btn">Create</a>
+        <a href={% url 'recent_exhibits' %} class="btn exhibit-btn">Recent</a>
+    {%endif%}
+    <div class="exhibit-grid">
+        {% for exh in exhibits %}
+            <div class="exhibit-item">
+                {% if exh.image %}
+                <img src="{{ exh.image.url }}" alt="Exhibit image">
+                {% endif %}
+                <a href="{{ exh.get_absolute_url }}"> {{ exh.title }} </a>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
+</html>

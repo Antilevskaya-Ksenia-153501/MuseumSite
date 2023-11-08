@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% load static %}
+<html lang="en">
+{% block head %}
+    <title>{% block title %}Contacts{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'contacts.css' %}"/>
+    <link href="https://fonts.googleapis.com/css2?family=Borel&family=Playpen+Sans:wght@400;500&display=swap" rel="stylesheet">
+{% endblock %}
+{% block content %}
+    <h3>Contacts:</h3>
+    <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+      <span itemprop="streetAddress">st. Kozlova, 3</span>
+      <span itemprop="addressLocality">Minsk</span>,
+      <span itemprop="addressRegion">Minsk region</span>
+      <span itemprop="postalCode">220005</span>,
+      <span itemprop="addressCountry">Belarus</span>
+    </div>
+    <p><strong>Phone/Fax (reception):</strong> +375 (17) 395-15-49</p>
+    <p><strong>E-mail:</strong> art_palace@tut.by</p>
+    <h3>Administration hours:</h3>
+    <p>Monday - Thursday 9:00 - 17:30</p>
+    <p>Friday 9:00 - 16:30; Saturday, Sunday - closed</p>
+    <h3>Visitor entrance:</h3>
+    <table>
+        <thead>
+            <tr>
+                <th colspan="3">Museum Schedule</th>
+            </tr>
+          <tr>
+            <th>Day</th>
+            <th>Opening Time</th>
+            <th>Closing Time</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Monday</td>
+            <td>11:00 AM</td>
+            <td>8:00 PM</td>
+          </tr>
+          <tr>
+            <td>Tuesday</td>
+            <td>11:00 AM</td>
+            <td>8:00 PM</td>
+          </tr>
+          <tr>
+            <td>Wednesday</td>
+            <td>11:00 AM</td>
+            <td>8:00 PM</td>
+          </tr>
+          <tr>
+            <td>Thursday</td>
+            <td>11:00 AM</td>
+            <td>8:00 PM</td>
+          </tr>
+          <tr>
+            <td>Friday</td>
+            <td>11:00 AM</td>
+            <td>9:00 PM</td>
+          </tr>
+          <tr>
+            <td>Saturday</td>
+            <td>11:00 AM</td>
+            <td>9:00 PM</td>
+          </tr>
+          <tr>
+            <td>Sunday</td>
+            <td colspan="2">Closed</td>
+          </tr>
+        </tbody>
+      </table>
+    <p><em>Cash desk:</em> +375 (17) 252-98-88 (opening hours - Monday-Thursday - 19-30, Friday-Sunday - 20-30).</p>
+    <h3>Quotes:</h3>
+    <p><q lang="fr">Ce que femme veut, Dieu le veut</q>.</p>  
+    <p><q lang="de">Der Mensch, versuche die Gotter nicht</q>.</p>  
+    <p><q lang="en">То be or not to be</q>.</p>
+    <section id="audio">
+      <h3>Music:</h3>
+        <audio controls>
+            <source src="/media/voices.mp3" type="audio/mp3">
+        </audio>
+    </section>
+
+    <section id="video">
+        <h3>Video:</h3>
+        <video controls height="400px" width="500px">
+            <source src="/media/test_video.mp4" type="video/mp4" type="video/mp4">
+        </video>
+    </section>
+
+    <h3 style="display: inline-block;">Employees:</h3>
+    <div class="employee-container">
+      {% for employee in employees %}
+      <div class="employee">
+          {% if not employee.is_staff %}
+              <img src="{{ employee.image.url }}" alt="Employee image" height="350px" width="350px">
+              <p>First name: {{ employee.first_name }}</p>
+              <p>Last name: {{ employee.last_name }}</p>
+              <p>Tel: {{ employee.phone_number }}</p>
+              <p>Post: {{ employee.post }}</p>
+          {%endif%}
+      </div>
+      {% endfor %} 
+  </div>  
+  <form>
+    <div class="form-control">
+      <label for="name">Name:</label>
+      <input type="text" id="name" required>
+    </div>
+  
+    <div class="form-control">
+      <label for="email">Email:</label>
+      <input type="email" id="email" disabled>
+    </div>
+  
+    <div class="form-control">
+      <label for="age">Age:</label>
+      <input type="number" id="age" min="18" max="65" value="16">
+    </div>
+  
+    <div class="form-control">
+      <label for="subscription">Subscribe:</label>
+      <select id="subscription" required>
+        <option value="">Select an option</option>
+        <option value="basic">Basic</option>
+        <option value="premium">Premium</option>
+      </select>
+    </div>
+  
+    <div class="form-control">
+      <input type="checkbox" id="agree" checked disabled>
+      <label for="agree">I agree to the terms and conditions</label>
+    </div>
+  
+    <div class="form-control">
+      <input type="radio" id="option1" name="options" checked>
+      <label for="option1">Option 1</label>
+      <input type="radio" id="option2" name="options">
+      <label for="option2">Option 2</label>
+    </div>
+  
+    <div class="form-control">
+      <label for="rating">Rating:</label>
+      <input type="range" id="rating" min="1" max="5" value="3" >
+    </div>
+  
+    <div class="form-control">
+      <button type="submit" class="btn">Submit</button>
+    </div>
+{% endblock %}
+</html>

@@ -1,0 +1,93 @@
+.header {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px #D6D6D6 solid;
+    top: 0;
+    left: 0;
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+    background-color: white;
+}
+
+.header-row {
+    display: flex;
+    align-items: center;
+}
+
+.header-logo {
+    height: 50px;
+    width: 50px;
+    margin-left: 10px;
+    display: inline-block;
+    transition: rotate(45deg) 0.3s ease;
+} 
+
+.header-logo:hover {
+    transform: rotate(45deg);
+}
+
+.header-nav {
+    margin-left: 10px;
+    font-weight: 500;
+    color: #292929;
+}
+
+.header-nav ul {
+    display: flex;
+    font-size: large;
+}
+
+.header-nav li:not(:last-child) {
+    margin-right: 20px;
+}
+
+.header-nav a {
+    transition: color 0.2s ease;
+}
+
+.header-nav a:link {
+    color: rgb(255, 119, 0);
+}
+  
+.header-nav a:visited {
+    color: #01996D; 
+}
+
+.header-nav a:hover {
+    color: rgb(7, 53, 126);
+}
+
+.header-nav a:active {
+    color: rgb(172, 166, 9); 
+}
+
+.header-login {
+    display:flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+.header-login > * + * {
+    margin-left: 10px;
+}
+
+.user {
+    font-size: large;
+    color: #292929;
+}
+
+.time {
+    margin-left: 10px;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+#date, #time, #zone {
+    color: #292929;
+    font-weight: 500;
+}
+
+#date::before, #time::before, #zone::before {
+    content: ": ";
+}

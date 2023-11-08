@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% load static %}
+<html lang="en">
+{% block head %}
+    <title>{% block title %}Analytics{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'base.css' %}">
+{% endblock %}
+{% block content %}
+  <figure>
+    <img src="/media/excursions_per_seasons.png">
+    <figcaption>Number of Excursions during the Season</figcaption>
+  </figure>
+{% endblock %}
+</html>

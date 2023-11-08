@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% load static %}
+<html lang="en">
+{% block head %}
+    <title>{% block title %}Employees{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'list_employees.css' %}"/>
+{% endblock %}
+{% block content %}
+    {% if user.is_staff %}
+        <form action="{% url 'search_results' %}" method="get" class="search-form">
+            <label for="floor">Choose a floor:</label>
+            <input name="floor" type="text" placeholder="Search...">
+        </form>
+    {% endif %}
+    <div class="employee-container">
+        {% for employee in employees %}
+        <div class="employee">
+            {% if not employee.is_staff %}
+                <img src="{{ employee.image.url }}" alt="Employee image" height="350px" width="350px">
+                <p>First name: {{ employee.first_name }}</p>
+                <p>Last name: {{ employee.last_name }}</p>
+                <p>Tel: {{ employee.phone_number }}</p>
+                <p>Post: {{ employee.post }}</p>
+            {%endif%}
+        </div>
+        {% endfor %} 
+    </div>
+    <a href="{% url 'authorization:registerEmployee' %}" class="btn employee-btn">Register</a> 
+{% endblock %}
+</html>
