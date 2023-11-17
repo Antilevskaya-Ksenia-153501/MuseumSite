@@ -22,5 +22,23 @@
             </div>
         {% endfor %}
     </div>
+    <script>
+        const exhibitItems = document.querySelectorAll('.exhibit-item');
+
+        exhibitItems.forEach(item => {
+            item.addEventListener('mouseover', () => {
+                item.style.transform = 'scale(1.1) translateY(-10px)';
+                item.style.boxShadow = '0 10px 20px rgba(0, 0, 0, 0.5)';
+                item.style.zIndex = '2';
+            });
+
+            item.addEventListener('mouseout', () => {
+                item.style.transform = 'scale(1) translateY(0)';
+                item.style.boxShadow = 'none';
+                item.style.zIndex = '1';
+            });
+        });
+    </script>
 {% endblock %}
 </html>
+

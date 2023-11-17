@@ -235,3 +235,63 @@ video {
     background-color: #F5F5F5;
     border-color: #999;
 }
+
+hr {
+    border: none;
+    height: 4px;
+    background-color: #cccccc;
+    margin: 20px 0;
+}
+
+h1 {
+    font-size: 24px;
+    text-align: center;
+    text-decoration: underline;
+    font-weight: 600;
+    font-family: 'Playpen Sans', cursive;
+}
+
+.generate_table {
+    margin: 10px;
+}
+  
+.generate_table label {
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: 500;
+    font-family: 'Playpen Sans', cursive;
+}
+  
+.generate_table input[type="number"] {
+    padding: 5px;
+    width: 100px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+}
+
+.generate_table .btn {
+    font-family: 'Playpen Sans', cursive;
+}
+
+
+.buttons {
+    margin: 20px 10px;
+}
+
+.buttons .btn {
+    font-family: 'Playpen Sans', cursive;
+}
+
+#squareTable {
+    border-collapse: collapse;
+    margin: 5px;
+}
+  
+#squareTable td {
+    border: 1px solid black;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    cursor: pointer;
+    font-family: 'Playpen Sans', cursive;
+}

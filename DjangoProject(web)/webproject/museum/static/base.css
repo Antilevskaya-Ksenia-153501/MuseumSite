@@ -61,3 +61,12 @@ figure figcaption {
     font-size: 18px;
 }
 
+.time {
+    font-size: 18px;
+    margin-top: 80px;
+}
+
+.time span {
+    font-weight: bold;
+}
+

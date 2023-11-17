@@ -15,7 +15,9 @@ from django.db.models import Q
 
 
 def list_exhibits(request):
-    if  request.user.is_employee and not request.user.is_superuser:
+    if not request.user.is_authenticated:
+        exhibits = Exhibit.objects.all()
+    elif  request.user.is_employee and not request.user.is_superuser:
         exhibits = Exhibit.objects.filter(employee_id=request.user.id)
     else:
         exhibits = Exhibit.objects.all()

@@ -24,7 +24,7 @@
 }
 
 h1 {
-    font-size: 30px;
+    font-size: 35px;
     font-weight: 800;
     text-align: center;
     color: black;
@@ -32,14 +32,14 @@ h1 {
 }
 
 h2 {
-    font-size: 24px;
+    font-size: 30px;
     font-weight: 800;
     color: black;
     padding: 10px;
 }
 
 h3 {
-    font-size: 22px;
+    font-size: 28px;
     font-weight: 800;
     color: black;
     padding-left: 10px;
@@ -99,3 +99,8 @@ a[href^="/media/policy"]:hover {
     color: #fff;
 }
 
+label {
+    margin: 10px;
+    font-size: 18px;
+
+}

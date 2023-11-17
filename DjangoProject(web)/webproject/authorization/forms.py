@@ -48,7 +48,7 @@ class EmployeeCreateForm(UserCreationForm):
 
 
 class CustomerCreateForm(UserCreationForm):
-    email = forms.EmailField(required=True)
+    email = forms.EmailField(required=True, help_text='Email must be not empty')
 
     class Meta:
         model = Customer

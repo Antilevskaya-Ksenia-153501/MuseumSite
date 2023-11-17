@@ -104,49 +104,70 @@
       {% endfor %} 
   </div>  
   <form>
-    <div class="form-control">
-      <label for="name">Name:</label>
-      <input type="text" id="name" required>
+      <div class="form-control">
+        <label for="name">Name:</label>
+        <input type="text" id="name" required>
+      </div>
+    
+      <div class="form-control">
+        <label for="email">Email:</label>
+        <input type="email" id="email" disabled>
+      </div>
+    
+      <div class="form-control">
+        <label for="age">Age:</label>
+        <input type="number" id="age" min="18" max="65" value="16">
+      </div>
+    
+      <div class="form-control">
+        <label for="subscription">Subscribe:</label>
+        <select id="subscription" required>
+          <option value="">Select an option</option>
+          <option value="basic">Basic</option>
+          <option value="premium">Premium</option>
+        </select>
+      </div>
+    
+      <div class="form-control">
+        <input type="checkbox" id="agree" checked disabled>
+        <label for="agree">I agree to the terms and conditions</label>
+      </div>
+    
+      <div class="form-control">
+        <input type="radio" id="option1" name="options" checked>
+        <label for="option1">Option 1</label>
+        <input type="radio" id="option2" name="options">
+        <label for="option2">Option 2</label>
+      </div>
+    
+      <div class="form-control">
+        <label for="rating">Rating:</label>
+        <input type="range" id="rating" min="1" max="5" value="3" >
+      </div>
+    
+      <div class="form-control">
+        <button type="submit" class="btn">Submit</button>
+      </div>
+  </form>
+
+    <hr>
+
+    <h1>Square table</h1>
+    <div class="generate_table">
+      <label for="size">Enter table size: </label>
+      <input type="number" id="size" min="1">
+      <button class="btn" onclick="generateTable()">Create table</button>
     </div>
-  
-    <div class="form-control">
-      <label for="email">Email:</label>
-      <input type="email" id="email" disabled>
+    <div class="generate_table">
+      <label for="maxSelected">Maximum select cells in row:</label>
+      <input type="number" id="maxSelected" min="1" value="2">
     </div>
-  
-    <div class="form-control">
-      <label for="age">Age:</label>
-      <input type="number" id="age" min="18" max="65" value="16">
+    <div class="buttons">
+      <button class="btn" onclick="addRow()">Add row</button>
+      <button class="btn" onclick="addColumn()">Add column</button>
+      <button class="btn" onclick="transposeTable()">Transpose</button>
     </div>
-  
-    <div class="form-control">
-      <label for="subscription">Subscribe:</label>
-      <select id="subscription" required>
-        <option value="">Select an option</option>
-        <option value="basic">Basic</option>
-        <option value="premium">Premium</option>
-      </select>
-    </div>
-  
-    <div class="form-control">
-      <input type="checkbox" id="agree" checked disabled>
-      <label for="agree">I agree to the terms and conditions</label>
-    </div>
-  
-    <div class="form-control">
-      <input type="radio" id="option1" name="options" checked>
-      <label for="option1">Option 1</label>
-      <input type="radio" id="option2" name="options">
-      <label for="option2">Option 2</label>
-    </div>
-  
-    <div class="form-control">
-      <label for="rating">Rating:</label>
-      <input type="range" id="rating" min="1" max="5" value="3" >
-    </div>
-  
-    <div class="form-control">
-      <button type="submit" class="btn">Submit</button>
-    </div>
+    <table id="squareTable"></table>
+    <script src="{% static 'js/table.js'%}"></script>
 {% endblock %}
 </html>

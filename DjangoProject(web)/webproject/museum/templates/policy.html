@@ -7,6 +7,18 @@
     <link rel="stylesheet" href="{% static 'policy.css' %}"/>
 {% endblock %}
 {% block content %}
+
+<label for="text_color">Change text color: </label>
+<input type="color" id="text_color" onchange="changeTextColor(this.value)">
+
+<br>
+
+<label for="text_size">Change text size: </label>
+<input type="radio" name="text-size" value="20px" onchange="changeTextSize(this.value)" checked>20px
+<input type="radio" name="text-size" value="22px" onchange="changeTextSize(this.value)">22px
+<input type="radio" name="text-size" value="24px" onchange="changeTextSize(this.value)">24px
+<script src="{% static 'js/decoration_func.js' %}"></script>
+
 <h1>Museum Visitor Policy</h1>
 <nav class="policy-nav">
   <ul>
