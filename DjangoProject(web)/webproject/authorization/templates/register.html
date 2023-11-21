@@ -4,6 +4,34 @@
     <title>Registration</title>
 </head>
 <body>
+    <script>
+        let birthDate = prompt("Enter your date of birth in the format DD.MM.YYYY:");
+        let parts = birthDate.split(".");
+        let day = parseInt(parts[0]);
+        let month = parseInt(parts[1]) - 1;
+        let year = parseInt(parts[2]);
+
+        let birthDay = new Date(year, month, day);
+        let today = new Date();
+
+        let age = today.getFullYear() - birthDay.getFullYear();
+        if (today.getMonth() < month || (today.getMonth() === month && today.getDate() < day)) 
+        {
+            age--;
+        }
+        let isAdult = age >= 18;
+
+        let daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+        let dayOfWeek = daysOfWeek[birthDay.getDay()];
+
+        if (isAdult) {
+            alert("Your age is: " + age + " years. Day of the week of your birth: " + dayOfWeek);
+        }
+
+        if (!isAdult) {
+            alert("Parental permission is required to use this site.");
+        }
+    </script>
     <h1>Registration</h1>
     <hr>
     <form action="" method="POST">

@@ -77,5 +77,35 @@
         <p>Registered in the Trade Register of the Republic of Belarus on May 31, 2002 under No. 416870</p>
         <div class="image-container"><img src="/media/stamp.png" alt="Stamp"></div>
     </section>
+
+    <h2 class="title-paragraph">Photos</h2>
+
+    <div class="image-container">
+        <div class="image-wrapper">
+          <img src="/media/photo1.jpg" alt="Image 1" class="scroll-animation">
+        </div>
+        <div class="image-wrapper">
+          <img src="/media/photo2.jpg" alt="Image 2" class="scroll-animation">
+        </div>
+        <div class="image-wrapper">
+          <img src="/media/photo3.jpg" alt="Image 3" class="scroll-animation">
+        </div>
+        <div class="image-wrapper">
+            <img src="/media/photo4.jpg" alt="Image 3" class="scroll-animation">
+          </div>
+    </div>
+
+    <script>
+        window.addEventListener('scroll', function() {
+        var scrollPosition = window.scrollY;
+        var images = document.getElementsByClassName('scroll-animation');
+
+        for (var i = 0; i < images.length; i++) {
+            var image = images[i];
+            var rotation = scrollPosition / 10;
+            image.style.transform = 'rotateY(' + rotation + 'deg)';
+        }
+        });
+    </script>
 {% endblock %}
 </html>

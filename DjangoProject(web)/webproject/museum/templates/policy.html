@@ -19,6 +19,23 @@
 <input type="radio" name="text-size" value="24px" onchange="changeTextSize(this.value)">24px
 <script src="{% static 'js/decoration_func.js' %}"></script>
 
+<br>
+
+<form id="backgroundColorChange">
+    <label for="colorInput">Choose background color:</label>
+    <input type="color" id="colorInput" name="colorInput">
+    <input type="submit" value="submit" class="btn">
+</form>
+
+<script>
+    document.getElementById("backgroundColorChange").addEventListener('submit', function(event) {
+    event.preventDefault(); 
+
+    var color = document.getElementById('colorInput').value;
+    document.body.style.backgroundColor = color;
+  });
+</script>
+
 <h1>Museum Visitor Policy</h1>
 <nav class="policy-nav">
   <ul>

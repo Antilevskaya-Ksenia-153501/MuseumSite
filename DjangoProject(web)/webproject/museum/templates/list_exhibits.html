@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Exhibits{% endblock %}</title>
     <link rel="stylesheet" href="{% static 'list_exhibits.css' %}"/>
+    <script src="{% static 'js/classes.js'%}"></script>
 {% endblock %}
 {% block content %}
     {% if user.is_staff %}

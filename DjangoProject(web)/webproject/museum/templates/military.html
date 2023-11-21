@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% load static %}
+<html lang="en">
+{% block head %}
+    <title>{% block title %}Military{% endblock %}</title>
+    <style>
+        #soldiersForm {
+          margin: 20px;
+          padding: 20px;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+        }
+        
+        #soldiersForm label {
+          display: block;
+          margin-bottom: 10px;
+        }
+        
+        #soldiersForm input[type="text"],
+        #soldiersForm input[type="number"] {
+          width: 200px;
+          padding: 5px;
+          border: 1px solid #ccc;
+          border-radius: 3px;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+    <form id="soldiersForm">
+        <label for="surname">Surname: </label>
+        <input type="text" id="surname" required>
+        <label for="name">Name: </label>
+        <input type="text" id="name" required>
+        <label for="patronymic">Patronymic: </label>
+        <input type="text" id="patronymic" required>
+        <label for="age">Age: </label>
+        <input type="number" id="age" min="18" max="65" value="18" required>
+        <label for="height">Height(cm): </label>
+        <input type="number" id="height" min="140" max="210" value="140" required>
+        <input type="submit" value="Add soldier" class="btn">
+    </form>
+
+    <script>
+        let soldiers = new Map();
+        function addSoldier(event) {
+            event.preventDefault(); 
+            
+            let surname = document.getElementById('surname').value;
+            let name = document.getElementById('name').value;
+            let patronymic = document.getElementById('patronymic').value;
+            let age = parseInt(document.getElementById('age').value);
+            let height = parseInt(document.getElementById('height').value);
+
+            let soldier = {
+                surname: surname,
+                name: name,
+                patronymic: patronymic,
+                age: age,
+                height: height,
+            };
+            
+            soldiers.set(soldier, height);
+
+            let heightCount = new Map();
+            for (let soldierHeight of soldiers.values()) {
+              heightCount.set(soldierHeight, (heightCount.get(soldierHeight) || 0) + 1);
+              if (heightCount.get(soldierHeight) >= 2) {
+                alert(`There are at least two people with height ${soldierHeight} cm.`);
+                break;
+              }
+            }
+
+      
+          document.getElementById('surname').value = '';
+          document.getElementById('name').value = '';
+          document.getElementById('patronymic').value = '';
+          document.getElementById('age').value = 18;
+          document.getElementById('height').value = 140;
+        }
+        document.getElementById('soldiersForm').addEventListener('submit', addSoldier);
+    </script>
+{% endblock %}
+</html>

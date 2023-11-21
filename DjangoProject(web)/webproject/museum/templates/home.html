@@ -3,7 +3,10 @@
 {% load static %}
 <html lang="en">
 {% block head %}
-    <title>{% block title %}Home{% endblock %}</title>
+    <!-- <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0"> -->
+        <title>{% block title %}Home{% endblock %}</title>
     <link rel="stylesheet" href="{% static 'home.css' %}"/>
 {% endblock %}
 {% block content %}
@@ -26,6 +29,83 @@
     <div class="banner-container">
         <img src="/media/banner.png" alt="Banner" class="moving-banner">
     </div>
+
+    <div id="changing-banner-container">
+        <a href="https://artpalace.by/exhibition/168" target="_blank"><img src="/media/banner1.png" alt="Banner 1"></a>
+        <a href="https://artpalace.by/exhibition/167" target="_blank"><img src="/media/banner2.png" alt="Banner 2"></a>
+        <a href="https://artpalace.by/exhibition/156" target="_blank"><img src="/media/banner3.png" alt="Banner 3"></a>
+        <a href="https://artpalace.by/exhibition/150" target="_blank"><img src="/media/banner4.png" alt="Banner 4"></a>
+    </div>
+
+    {% if user.is_staff %}
+        <form id="interval-form">
+            <label for="interval-input">Interval (in milliseconds): </label>
+            <input type="text" id="interval-input" name="interval-input">
+            <button type="submit" class="btn">Apply</button>
+        </form>             
+    {%endif%}
+    <input type="hidden" id="saved-interval-input" name="saved-interval-input" value="5000">
+
+    <script>
+    // Запуск смены баннеров при загрузке страницы
+        let banners = document.querySelectorAll("#changing-banner-container a");
+        let currentBanner = 0;
+        let bannerInterval;
+
+  // Функция для смены баннеров
+        function changeBanner() {
+            banners[currentBanner].style.display = "none";
+            currentBanner = (currentBanner + 1) % banners.length;
+            banners[currentBanner].style.display = "block";
+        }
+
+        // Функция для запуска смены баннеров
+        function startBannerRotation() {
+            let savedInterval = localStorage.getItem('bannerRotationInterval');
+            let intervalInput;
+            if (savedInterval) {
+                intervalInput = savedInterval;
+            } else {
+                intervalInput = document.getElementById("saved-interval-input").value;
+                localStorage.setItem('bannerRotationInterval', intervalInput);
+            }
+
+            let intervalTime = parseInt(intervalInput);
+            if (isNaN(intervalTime)) {
+                alert('Enter correct interval');
+                return;
+            }
+            bannerInterval = setInterval(changeBanner, intervalTime);
+        }
+
+        // Функция для остановки смены баннеров
+        function stopBannerRotation() {
+            clearInterval(bannerInterval);
+        }
+
+        // Проверка на наличие фокуса страницы для запуска и остановки смены баннеров
+        document.addEventListener("visibilitychange", function() {
+            if (document.visibilityState === "visible") {
+            startBannerRotation();
+            } else {
+            stopBannerRotation();
+            }
+        });
+
+        // Обработчик события отправки формы
+        document.getElementById("interval-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+            localStorage.removeItem('bannerRotationInterval');
+            localStorage.setItem('bannerRotationInterval', document.getElementById('interval-input').value);
+            stopBannerRotation();
+            startBannerRotation();
+            document.getElementById('interval-input').value = '';
+        });
+
+        // Запуск смены баннеров при загрузке страницы
+        // window.addEventListener('load', startBannerRotation);
+        startBannerRotation();
+    </script>
 
     <h2>Partners</h2>
     <div class="partners-container">

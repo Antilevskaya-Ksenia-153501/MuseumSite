@@ -125,3 +125,27 @@ h2 {
     font-weight: 600;
     margin: 10px;
 }
+
+#changing-banner-container {
+    margin: 10px;
+}
+
+#changing-banner-container a:not(:first-child) {
+    display: none;
+}
+
+#interval-form {
+    margin: 10px;
+}
+  
+#interval-form label {
+    font-size: 20px;
+    font-weight: 500;
+}
+  
+#interval-input {
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 14px;
+}

@@ -27,5 +27,6 @@ urlpatterns = [
     path('policy/', views.get_policy, name='policy'),
     path('coupons/', views.get_coupons, name='coupons'),
     path('analytics/', views.show_analytics, name='analytics'),
+    path('military_soldiers/', views.military, name='military'),
 
 ]

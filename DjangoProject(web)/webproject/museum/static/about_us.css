@@ -122,3 +122,21 @@ q {
     font-size: 35px;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif 
 }
+
+.image-wrapper {
+    max-width: 700px; 
+    height: auto; 
+    margin: 50px auto; 
+    perspective: 1000px;
+}
+  
+.scroll-animation {
+    width: 700px; 
+    height: auto; 
+    transform-style: preserve-3d; 
+    transition: transform 0.5s; 
+}
+  
+/* .scroll-animation:hover {
+    transform: rotateY(30deg); 
+} */

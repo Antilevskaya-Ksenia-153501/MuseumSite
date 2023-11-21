@@ -236,3 +236,6 @@ def show_analytics(request):
         plt.savefig(os.path.join(settings.MEDIA_ROOT, 'excursions_per_seasons.png'), format='png')
         plt.close()
     return render(request, 'analytics.html')
+
+def military(request):
+    return render(request, 'military.html')
